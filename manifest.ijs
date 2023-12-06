@@ -13,6 +13,6 @@ draughts_rules.ijs
 draughts_terminal.ijs
 )
 
-RELEASE=: 'j903'
+RELEASE=: ''
 
 FOLDER=: 'games/draughts'

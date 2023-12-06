@@ -1,2 +1,2 @@
 # jdraughts
-An implementation of the game of draughts in J
+An implementation of the game of international draughts in J

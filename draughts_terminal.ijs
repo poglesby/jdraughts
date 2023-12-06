@@ -1,10 +1,11 @@
 NB. Console interface for Draughts Game
 NB. Should work in all J frontends
 
-NB. DraughtsCon_z_ =: conew&'draughtsui'
-NB. require 'games/draughts/draughts_rules'
-NB. coclass 'draughtsui'
-NB. coinsert 'draughtsrules'
+DraughtsCon_z_ =: conew&'draughtsui'
+
+require 'games/draughts/draughts_rules'
+coclass 'draughtsui'
+coinsert 'draughtsrules'
 
 NB. Variables
 NB. =====================================================
@@ -14,7 +15,10 @@ player =: 1
 NB. Methods
 NB. =====================================================
 
-new_game =: 3 : 0
+destroy =: codestroy ''
+quit =: destroy
+
+create =: 3 : 0
     smoutput Instructions
     newBoard ''
     history =: 0 $ 0
@@ -46,6 +50,7 @@ update_turn =: 3 : 0
     if. end do.
         smoutput (> (end = _1) { 'Black';'White'), ' won the game! Congratulations!'
         smoutput Victory
+        codestroy ''
     else.
         history =: history, < board
         valid_moves =: getValidMoves y
@@ -111,6 +116,10 @@ Instructions =: 0 : 0
         log ''
        or, to see only a certain number of recent moves, use
         log <number>
+     - To quit the game, use the command 
+        quit ''
+     - Start a new game using the command
+        DraughtsCon ''
     
 )
 
@@ -122,11 +131,11 @@ Illegal_Move =: 0 : 0
 
 Victory =: 0 : 0
     To play another game, use 
-        create '' 
+        DraughtsCon '' 
 )
 
 NB. Auto-run UI
 NB. =====================================================
 
-NB. cocurrent 'base'
-new_game ''
+cocurrent 'base'
+create ''

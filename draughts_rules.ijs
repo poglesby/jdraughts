@@ -1,7 +1,7 @@
 NB. Generic draughts engine
 NB. Spaces are either 0 (empty), _1 (white piece), 1 (black piece), _2 (white crowned piece), 2 (black crowned piece)
 
-NB. coclass 'draughts'
+coclass 'draughts'
 
 newBoard =: 3 : 0 NB. Creates/clears the board.
    white_spaces =. ((4 10 $ ((10 $ (<'  '), <_1), 10 $ (10 $ (<_1), <'  ')))

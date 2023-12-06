@@ -15,19 +15,17 @@ player =: 1
 NB. Methods
 NB. =====================================================
 
-destroy =: codestroy ''
-quit =: destroy
-
 create =: 3 : 0
-    if. y do.
-        smoutput Instructions
-        newBoard 
-        history =: 0 $ 0
-        update_turn player
-        game_log =: 0 5 $ 0
-        smoutput board
-    end.
+    smoutput Instructions
+    newBoard ''
+    history =: 0 $ 0
+    update_turn player
+    game_log =: 0 5 $ 0
+    smoutput board
 )
+
+destroy =: codestroy
+quit =: destroy
 
 move =: 3 : 0
     current_move =. y

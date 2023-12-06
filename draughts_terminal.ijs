@@ -19,26 +19,28 @@ destroy =: codestroy ''
 quit =: destroy
 
 create =: 3 : 0
-    smoutput Instructions
-    newBoard ''
-    history =: 0 $ 0
-    update_turn player
-    game_log =: 0 5 $ 0
-    board
+    if. y do.
+        smoutput Instructions
+        newBoard 
+        history =: 0 $ 0
+        update_turn player
+        game_log =: 0 5 $ 0
+        smoutput board
+    end.
 )
 
 move =: 3 : 0
-    move =. y
+    current_move =. y
     if. (# y) < # 0 { 0 { valid_moves do.
-        move =. move, (((# 0 { 0 { valid_moves) - # y) $ ' ')
+        current_move =. current_move, (((# 0 { 0 { valid_moves) - # y) $ ' ')
     end.
 
-    if. +/ */"1 move ="1 valid_moves do.
-        executeMove move
+    if. +/ */"1 current_move ="1 valid_moves do.
+        executeMove current_move
         executePromotions ''
         player =: -player
         update_turn player
-        game_log =: game_log, ,: move
+        game_log =: game_log, ,: current_move
         smoutput board
     else.
         smoutput Illegal_Move
@@ -64,15 +66,15 @@ undo =: 3 : 0
     game_log =: (-y) }. game_log
     player =: player * _1 + 2 * 2 = y +. 2
     update_turn player
-    board
+    smoutput board
 )
 
 log =: 3 : 0
-    output =. game_log(],"1[) '.  '(([)(],"1[)(":"0@:(1&+)@i.@#@])) game_log
+    full_log =. game_log(],"1[) '.  '(([)(],"1[)(":"0@:(1&+)@i.@#@])) game_log
     if. # y do.
-        (-y) {. output
+        smoutput (-y) {. full_log
     else.
-        output
+        smoutput full_log
     end.
 )
 
@@ -119,7 +121,7 @@ Instructions =: 0 : 0
      - To quit the game, use the command 
         quit__brd ''
      - Start a new game using the command
-        DraughtsCon ''
+        brd =: DraughtsCon ''
     
 )
 

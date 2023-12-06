@@ -138,4 +138,4 @@ NB. Auto-run UI
 NB. =====================================================
 
 cocurrent 'base'
-create ''
+DraughtsCon ''

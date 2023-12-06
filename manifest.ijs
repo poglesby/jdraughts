@@ -6,13 +6,13 @@ Implementation of the game of International Draughts in J.
 Designed by Patrick Oglesby
 )
 
-VERSION=: ''
+VERSION=: '1.0.0'
 
 FILES=: 0 : 0
 draughts_rules.ijs
 draughts_terminal.ijs
 )
 
-RELEASE=: 'j901'
+RELEASE=: 'j903'
 
 FOLDER=: 'games/draughts'

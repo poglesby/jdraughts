@@ -109,15 +109,15 @@ Instructions =: 0 : 0
      - When chained captures are possible, the additional steps are added in order
         ex. '28x17x26'
      - To move, use the command
-        move <move in string format> 
+        move__brd <move in string format> 
      - To undo a move, use the command
-        undo <number of moves to undo>
+        undo__brd <number of moves to undo>
      - To see a log of the moves made throughout the game, use the command
-        log ''
+        log__brd ''
        or, to see only a certain number of recent moves, use
-        log <number>
+        log__brd <number>
      - To quit the game, use the command 
-        quit ''
+        quit__brd ''
      - Start a new game using the command
         DraughtsCon ''
     
@@ -138,4 +138,4 @@ NB. Auto-run UI
 NB. =====================================================
 
 cocurrent 'base'
-DraughtsCon ''
+brd =: DraughtsCon ''

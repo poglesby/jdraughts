@@ -5,7 +5,7 @@ DraughtsCon_z_ =: conew&'draughtsui'
 
 require 'games/draughts/draughts_rules'
 coclass 'draughtsui'
-coinsert 'draughtsrules'
+coinsert 'draughts'
 
 NB. Variables
 NB. =====================================================
